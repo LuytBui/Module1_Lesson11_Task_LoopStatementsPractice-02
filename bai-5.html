@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai-5</title>
+</head>
+<body>
+<h3>Tính lãi kép (vòng lặp)</h3>
+Số tiền vay <input type="number" id="loanAmount"><br>
+Số tháng vay <input type="number" id="months"><br>
+Lãi hàng tháng (% - lãi kép) <input type="number" id="rate"><br>
+<input type="button" value="Tính lãi" onclick="calculate()">
+<p id="debt"></p>
+<script>
+    // Giống bài PP2.0  -- 9. Cấu trúc điều kiện 2 -- [*Bài tập] Luyện tập cấu trúc điều kiện 02
+    //
+    // function calculate(){
+    //     let loanAmount = parseFloat(document.getElementById('loanAmount').value);
+    //     let months = parseInt(document.getElementById('months').value);
+    //     let rate = parseFloat(document.getElementById('rate').value);
+    //     let debt = loanAmount * Math.pow(1+rate/100, months);
+    //
+    //     document.getElementById('debt').innerHTML = 'Số tiền phải trả: '+ debt;
+    //
+    // }
+
+
+    // Lần này dùng vòng lặp
+    function calculate(){
+        let loanAmount = parseFloat(document.getElementById('loanAmount').value);
+        let months = parseInt(document.getElementById('months').value);
+        let rate = parseFloat(document.getElementById('rate').value);
+
+        let factor = 1+rate/100;
+
+        let debt = loanAmount;
+        for (let i =0; i<months; i++){
+            debt *= factor;
+        }
+
+        document.getElementById('debt').innerHTML = 'Số tiền phải trả: '+ debt;
+
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //Bài 1: In dãy Finonaci
+
+    let N = parseInt(prompt('Số lượng cần in ra: '));
+
+    //Khởi đầu với 2 số hạng đầu tiên trong dãy là 1, 1
+    let beforeBefore = 0;    // ô nhớ số hạng gần thứ 2
+    let before = 1;           // ô nhớ số hạng gần thứ nhất
+    let count = 2;            // hiện dãy đang có 2 số
+
+    let result = beforeBefore + ' '+ before + ' ';
+    while (count < N) {
+        //Tính số tiếp theo
+        let fibo = before + beforeBefore;
+        result += fibo + ' ';
+
+        // Cập nhật ô nhớ chứa 2 số gần nhất
+        beforeBefore = before;
+        before = fibo;
+
+        count ++;
+    }
+    document.write(result);
+    document.title = ''+ N + ' số đầu tiên trong dãy Fibonacci';
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+
+    drawTriangle1();
+    drawTriangle2();
+    drawTriangle3();
+
+    drawTriangle4();
+
+    function drawTriangle1() {
+        for (let row = 1; row <= 5; row++) {
+            for (let col = 1; col <= row; col++) {
+                document.write('*');
+            }
+            // Vẽ xong 1 hàng, xuống dòng
+            document.write('<br>');
+        }
+
+        // Xuống dòng 2 lần
+        document.write('<br>');
+    }
+
+    function drawTriangle2() {
+        for (let row = 1; row <= 5; row++) {
+            for (let col = 6 - row; col >= 1; col--) {
+                document.write('*');
+            }
+            // Vẽ xong 1 hàng, xuống dòng
+            document.write('<br>');
+        }
+
+        // Xuống dòng 2 lần
+        document.write('<br>');
+    }
+
+    function drawTriangle3() {
+        for (let row = 1; row <= 5; row++) {
+            let line = "";
+            for (let col = 1; col <= 5 - row; col++) {
+                line += '&nbsp&nbsp';
+            }
+            for (let col = 1; col <= row; col++) {
+                line += '*';
+            }
+
+            document.write(line);
+
+            // Vẽ xong 1 hàng, xuống dòng
+            document.write('<br>');
+        }
+
+        // Xuống dòng 2 lần
+        document.write('<br>');
+    }
+
+    function drawTriangle4() {
+        for (let row = 1; row <= 5; row++) {
+            let line = "";
+            for (let col = 1; col < row; col++) {
+                line += '&nbsp&nbsp';
+            }
+            for (let col = 1; col <= 6 - row; col++) {
+                line += '*';
+            }
+
+
+            document.write(line);
+
+            // Vẽ xong 1 hàng, xuống dòng
+            document.write('<br>');
+        }
+
+        // Xuống dòng 2 lần
+        document.write('<br>');
+    }
+
+
+</script>
+</body>
+</html>
